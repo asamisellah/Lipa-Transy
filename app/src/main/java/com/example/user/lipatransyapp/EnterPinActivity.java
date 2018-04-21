@@ -23,29 +23,38 @@ public class EnterPinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_pin);
 
-            pin = findViewById(R.id.user_pin);
+        ok_button = findViewById(R.id.ok_button);
+
+        pin = findViewById(R.id.user_pin);
 
 
+        ok_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Account user = new Account();
+                if (pin.length() == 4) {
+                    if (Integer.parseInt(pin.getText().toString()) == user.getPassword()) {
 
-            ok_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-//                    Account user = new Account();
-//                    if(pin.length() == 4){
-//                        if(pin.getText().toString() == "2018"){
-
-                            Toast.makeText(EnterPinActivity.this, "Payment Successfull", Toast.LENGTH_SHORT).show();
-//                            AlertDialog confirm = new AlertDialog.Builder(EnterPinActivity.this).create();
-//                            confirm.setTitle("Please confirm Transaction");
-//                            confirm.setMessage("Confirm you are sending " );
-
+                        // Make Payment
+                        MainActivity fare = new MainActivity();
+                        user.setPayment(fare.fare);
+                        if (user.getBalance() >= user.getPayment()) {
+                            user.setBalance(user.getBalance() - user.getPayment());
+                        } else {
+                            Toast.makeText(fare, "You have insufficient balance", Toast.LENGTH_SHORT).show();
                         }
-//                        else{
-//                            Toast.makeText(EnterPinActivity.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                }
-            });
+                    }
 
+                    else{
+                            Toast.makeText(EnterPinActivity.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+        });
     }
 }
+
+
+
+
+

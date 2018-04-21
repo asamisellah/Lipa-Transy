@@ -4,4 +4,8 @@
     <string name="dialog_message">You are about to send </string>
     <string name="enter_pin_number">Enter Pin Number</string>
     <string name="ok_text">Ok</string>
+    <string name="intro">Pay conveniently with Lipa Transy</string>
+    <string name="till_hint">Enter Till Number</string>
+    <string name="seat_hint">Enter Seat Number</string>
+    <string name="enter_amount_hint">Enter Amount</string>
 </resources>

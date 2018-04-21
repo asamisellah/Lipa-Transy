@@ -4,8 +4,8 @@ package com.example.user.lipatransyapp;
 import android.widget.Toast;
 
 public class Account {
-    private String phone_number;
-    private String password;
+    private int phone_number;
+    private int password;
 
     private int deposit;
     private int payment;
@@ -16,41 +16,30 @@ public class Account {
 
     // Methods
     // Get Balance
-    private int getBalance(){
+    public int getBalance(){
         return this.balance;
     }
-    private int getPayment(){
+    public int getPayment(){
         return this.payment;
     }
-    public String getPhoneNumber(){
+    public int getPhoneNumber(){
         return this.phone_number;
     }
-    public String getPassword(){
+    public int getPassword(){
         return this.password;
     }
 
     // Set payment
-    private void setPhoneNumber(String phone_number){
+    private void setPhoneNumber(int phone_number){
         this.phone_number = phone_number;
     }
-    public void setPassword(String password){
+    public void setPassword(int password){
         this.password = password;
     }
     public void setPayment(int payment){
         this.payment = payment;
     }
-    public int setBalance(int balance){
-        return this.balance = balance;
-    }
-
-    // Make Payment
-    public void makePayment(){
-        if(this.balance >= getPayment()){
-            setBalance(getBalance() - getPayment());
-            
-        }
-        else{
-//            Toast.makeText(, "", Toast.LENGTH_SHORT).show();
-        }
+    public void setBalance(int balance){
+        this.balance = balance;
     }
 }

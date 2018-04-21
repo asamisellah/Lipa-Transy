@@ -37,14 +37,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                if (!till_number.getText().toString().trim().replaceAll("[^0-9]", "").equals("") && !seat_number.getText().toString().trim().equals("") && !fare_charge.getText().toString().trim().equals("") )
-                {
+                if (!till_number.getText().toString().trim().replaceAll("[^0-9]", "").equals("") && !seat_number.getText().toString().trim().equals("") && !fare_charge.getText().toString().trim().equals("")) {
                     Intent intent = new Intent(MainActivity.this, com.example.user.lipatransyapp.EnterPinActivity.class);
                     startActivity(intent);
-                }
-
-                    else
-                {
+                } else {
                     Toast.makeText(MainActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -53,8 +49,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    private String fare = fare_charge.getText().toString();
-//    
-//    public getFare( S)
 
 }
