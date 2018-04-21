@@ -5,11 +5,11 @@ import android.widget.Toast;
 
 public class Account {
     private int phone_number;
-    private int password;
+    private int password = 2018;
 
     private int deposit;
     private int payment;
-    private int balance = 0;
+    private int balance = 500;
 
     public Account(){
     }

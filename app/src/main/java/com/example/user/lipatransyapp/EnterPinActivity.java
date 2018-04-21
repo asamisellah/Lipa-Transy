@@ -40,8 +40,10 @@ public class EnterPinActivity extends AppCompatActivity {
                         user.setPayment(fare.fare);
                         if (user.getBalance() >= user.getPayment()) {
                             user.setBalance(user.getBalance() - user.getPayment());
+
+                            Toast.makeText(EnterPinActivity.this, "Successfully made payment", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(fare, "You have insufficient balance", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EnterPinActivity.this, "You have insufficient balance", Toast.LENGTH_SHORT).show();
                         }
                     }
 
